@@ -12,6 +12,7 @@ public class AddToCreativeTab {
     public static void addToCreative(CreativeModeTabEvent.BuildContents event) {
         if(event.getTab() == CreativeTabRegister.CREATIVE_TAB) {
             event.accept(ModItems.EXPLOSIVE_ARROW);
+            event.accept(ModItems.MAGNETIC_ARROW);
         }
     }
 }
