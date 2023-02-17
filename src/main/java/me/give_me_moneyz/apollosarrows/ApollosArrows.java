@@ -1,8 +1,8 @@
 package me.give_me_moneyz.apollosarrows;
 
 import com.mojang.logging.LogUtils;
+import me.give_me_moneyz.apollosarrows.registry.ModEntityType;
 import me.give_me_moneyz.apollosarrows.registry.ModItems;
-import me.give_me_moneyz.apollosarrows.world.entity.ModEntityType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -20,8 +20,10 @@ public class ApollosArrows {
 
     public ApollosArrows() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
         ModItems.ITEMS.register(modEventBus);
-        ModEntityType.register(modEventBus);
+        ModEntityType.ENTITY_TYPES.register(modEventBus);
+
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }

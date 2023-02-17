@@ -42,7 +42,7 @@ authors = "Give_Me_Moneyz" #optional
 
 # The description text for the mod (multi line!) (#mandatory)
 description = '''
-A mod that adds more types of arrows to minecraft
+A mod that adds more arrows to minecraft
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.apollosarrows]] #optional
