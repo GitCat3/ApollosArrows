@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "apollosarrows:explosive_arrow"
+    "apollosarrows:explosive_arrow",
+    "apollosarrows:magnetic_arrow"
   ]
 }
