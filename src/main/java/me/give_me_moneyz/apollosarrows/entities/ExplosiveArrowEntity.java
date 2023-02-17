@@ -36,7 +36,7 @@ public class ExplosiveArrowEntity extends AbstractArrow {
     @Override
     protected void tickDespawn() {
         if (this.inGroundTime > 60) {
-            this.level.explode(this, this.getX(), this.getY(), this.getZ(), 4.0f, true, Level.ExplosionInteraction.MOB);
+            this.level.explode(this, this.getX(), this.getY(), this.getZ(), 4.0f, false, Level.ExplosionInteraction.MOB);
             this.discard();
         }
     }
