@@ -1,6 +1,7 @@
 package me.give_me_moneyz.apollosarrows.registry;
 
 import me.give_me_moneyz.apollosarrows.ApollosArrows;
+import me.give_me_moneyz.apollosarrows.entities.EnderArrowEntity;
 import me.give_me_moneyz.apollosarrows.entities.ExplosiveArrowEntity;
 import me.give_me_moneyz.apollosarrows.entities.MagneticArrowEntity;
 import net.minecraft.world.entity.EntityType;
@@ -23,4 +24,9 @@ public class ModEntityType {
             () -> EntityType.Builder.of((EntityType.EntityFactory<MagneticArrowEntity>) MagneticArrowEntity::new,
                             MobCategory.MISC)
                     .sized(0.5F, 0.5F).build("magnet_arrow"));
+    public static final RegistryObject<EntityType<EnderArrowEntity>> ENDER_ARROW = ENTITY_TYPES.register(
+            "teleport_arrow",
+            () -> EntityType.Builder.of((EntityType.EntityFactory<EnderArrowEntity>) EnderArrowEntity::new,
+                            MobCategory.MISC)
+                    .sized(0.5F, 0.5F).build("teleport_arrow"));
 }
