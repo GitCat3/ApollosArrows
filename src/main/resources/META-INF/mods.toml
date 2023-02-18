@@ -29,7 +29,7 @@ displayName = "Apollo's Arrows" #mandatory
 # A file name (in the root of the mod JAR) containing a logo for display
 #logoFile="apollosarrows.png" #optional
 # A text field displayed in the mod UI
-credits="Credit for the explosive arrow texture goes to Greg the person" #optional
+credits="Credit for the explosive arrow and magnetic arrow item textures goes to Greg the person" #optional
 # A text field displayed in the mod UI
 authors = "Give_Me_Moneyz" #optional
 # Display Test controls the display for your mod in the server connection screen
