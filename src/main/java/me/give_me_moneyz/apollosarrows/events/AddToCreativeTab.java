@@ -13,6 +13,7 @@ public class AddToCreativeTab {
         if(event.getTab() == CreativeTabRegister.CREATIVE_TAB) {
             event.accept(ModItems.EXPLOSIVE_ARROW);
             event.accept(ModItems.MAGNETIC_ARROW);
+            event.accept(ModItems.ENDER_ARROW);
         }
     }
 }

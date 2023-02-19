@@ -1,6 +1,7 @@
 package me.give_me_moneyz.apollosarrows.client;
 
 import me.give_me_moneyz.apollosarrows.ApollosArrows;
+import me.give_me_moneyz.apollosarrows.client.render.EnderArrowRenderer;
 import me.give_me_moneyz.apollosarrows.client.render.ExplosiveArrowRenderer;
 import me.give_me_moneyz.apollosarrows.client.render.MagneticArrowRenderer;
 import me.give_me_moneyz.apollosarrows.registry.ModEntityType;
@@ -16,5 +17,6 @@ public class ClientSetup {
     public static void doSetup(FMLClientSetupEvent event) {
         EntityRenderers.register(ModEntityType.EXPLOSIVE_ARROW.get(), ExplosiveArrowRenderer::new);
         EntityRenderers.register(ModEntityType.MAGNETIC_ARROW.get(), MagneticArrowRenderer::new);
+        EntityRenderers.register(ModEntityType.ENDER_ARROW.get(), EnderArrowRenderer::new);
     }
 }
