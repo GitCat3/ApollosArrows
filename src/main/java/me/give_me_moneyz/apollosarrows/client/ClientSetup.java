@@ -1,6 +1,7 @@
 package me.give_me_moneyz.apollosarrows.client;
 
 import me.give_me_moneyz.apollosarrows.ApollosArrows;
+import me.give_me_moneyz.apollosarrows.client.render.AirstrikeArrowRenderer;
 import me.give_me_moneyz.apollosarrows.client.render.EnderArrowRenderer;
 import me.give_me_moneyz.apollosarrows.client.render.ExplosiveArrowRenderer;
 import me.give_me_moneyz.apollosarrows.client.render.MagneticArrowRenderer;
@@ -18,5 +19,6 @@ public class ClientSetup {
         EntityRenderers.register(ModEntityType.EXPLOSIVE_ARROW.get(), ExplosiveArrowRenderer::new);
         EntityRenderers.register(ModEntityType.MAGNETIC_ARROW.get(), MagneticArrowRenderer::new);
         EntityRenderers.register(ModEntityType.ENDER_ARROW.get(), EnderArrowRenderer::new);
+        EntityRenderers.register(ModEntityType.AIRSTRIKE_ARROW.get(), AirstrikeArrowRenderer::new);
     }
 }

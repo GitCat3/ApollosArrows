@@ -1,6 +1,7 @@
 package me.give_me_moneyz.apollosarrows.registry;
 
 import me.give_me_moneyz.apollosarrows.ApollosArrows;
+import me.give_me_moneyz.apollosarrows.items.AirstrikeArrowItem;
 import me.give_me_moneyz.apollosarrows.items.EnderArrowItem;
 import me.give_me_moneyz.apollosarrows.items.ExplosiveArrowItem;
 import me.give_me_moneyz.apollosarrows.items.MagneticArrowItem;
@@ -18,4 +19,6 @@ public class ModItems {
             () -> new MagneticArrowItem(new Item.Properties()));
     public static final RegistryObject<Item> ENDER_ARROW = ITEMS.register("ender_arrow",
             () -> new EnderArrowItem(new Item.Properties()));
+    public static final RegistryObject<Item> AIRSTRIKE_ARROW = ITEMS.register("airstrike_arrow",
+            () -> new AirstrikeArrowItem(new Item.Properties()));
 }

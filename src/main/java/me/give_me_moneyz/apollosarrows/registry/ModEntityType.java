@@ -1,6 +1,7 @@
 package me.give_me_moneyz.apollosarrows.registry;
 
 import me.give_me_moneyz.apollosarrows.ApollosArrows;
+import me.give_me_moneyz.apollosarrows.entities.AirstrikeArrowEntity;
 import me.give_me_moneyz.apollosarrows.entities.EnderArrowEntity;
 import me.give_me_moneyz.apollosarrows.entities.ExplosiveArrowEntity;
 import me.give_me_moneyz.apollosarrows.entities.MagneticArrowEntity;
@@ -29,4 +30,9 @@ public class ModEntityType {
             () -> EntityType.Builder.of((EntityType.EntityFactory<EnderArrowEntity>) EnderArrowEntity::new,
                             MobCategory.MISC)
                     .sized(0.5F, 0.5F).build("teleport_arrow"));
+    public static final RegistryObject<EntityType<AirstrikeArrowEntity>> AIRSTRIKE_ARROW = ENTITY_TYPES.register(
+            "strike_arrow",
+            () -> EntityType.Builder.of((EntityType.EntityFactory<AirstrikeArrowEntity>) AirstrikeArrowEntity::new,
+                            MobCategory.MISC)
+                    .sized(0.5F, 0.5F).build("strike_arrow"));
 }
