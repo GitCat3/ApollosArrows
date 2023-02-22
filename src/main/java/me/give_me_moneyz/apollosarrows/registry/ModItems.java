@@ -1,10 +1,7 @@
 package me.give_me_moneyz.apollosarrows.registry;
 
 import me.give_me_moneyz.apollosarrows.ApollosArrows;
-import me.give_me_moneyz.apollosarrows.items.AirstrikeArrowItem;
-import me.give_me_moneyz.apollosarrows.items.EnderArrowItem;
-import me.give_me_moneyz.apollosarrows.items.ExplosiveArrowItem;
-import me.give_me_moneyz.apollosarrows.items.MagneticArrowItem;
+import me.give_me_moneyz.apollosarrows.items.*;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -21,4 +18,6 @@ public class ModItems {
             () -> new EnderArrowItem(new Item.Properties()));
     public static final RegistryObject<Item> AIRSTRIKE_ARROW = ITEMS.register("airstrike_arrow",
             () -> new AirstrikeArrowItem(new Item.Properties()));
+    public static final RegistryObject<Item> TRANSMUTATION_ARROW = ITEMS.register("transmutation_arrow",
+            () -> new TransmutationArrowItem(new Item.Properties()));
 }

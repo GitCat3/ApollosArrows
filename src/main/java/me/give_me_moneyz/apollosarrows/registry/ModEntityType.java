@@ -1,10 +1,7 @@
 package me.give_me_moneyz.apollosarrows.registry;
 
 import me.give_me_moneyz.apollosarrows.ApollosArrows;
-import me.give_me_moneyz.apollosarrows.entities.AirstrikeArrowEntity;
-import me.give_me_moneyz.apollosarrows.entities.EnderArrowEntity;
-import me.give_me_moneyz.apollosarrows.entities.ExplosiveArrowEntity;
-import me.give_me_moneyz.apollosarrows.entities.MagneticArrowEntity;
+import me.give_me_moneyz.apollosarrows.entities.*;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.registries.DeferredRegister;
@@ -35,4 +32,8 @@ public class ModEntityType {
             () -> EntityType.Builder.of((EntityType.EntityFactory<AirstrikeArrowEntity>) AirstrikeArrowEntity::new,
                             MobCategory.MISC)
                     .sized(0.5F, 0.5F).build("strike_arrow"));
+    public static final RegistryObject<EntityType<TransmutationArrowEntity>> TRANSMUTATION_ARROW = ENTITY_TYPES.register(
+            "change_arrow", () -> EntityType.Builder.of(
+                    (EntityType.EntityFactory<TransmutationArrowEntity>) TransmutationArrowEntity::new,
+                    MobCategory.MISC).sized(0.5F, 0.5F).build("change_arrow"));
 }
