@@ -45,8 +45,8 @@ public class MagneticArrowEntity extends AbstractArrow {
     }
 
     @Override
-    public void tick() {
-        super.tick();
+    public void tickDespawn() {
+        super.tickDespawn();
         if (this.inGround) {
             if (this.inGroundTime >= 100) {
                 discard();

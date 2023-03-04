@@ -14,7 +14,6 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.network.NetworkHooks;
 
 public class TransmutationArrowEntity extends AbstractArrow {
-    private Block block;
     public TransmutationArrowEntity(EntityType<TransmutationArrowEntity> entityType, Level world) {
         super(entityType, world);
     }
@@ -38,20 +37,16 @@ public class TransmutationArrowEntity extends AbstractArrow {
     }
 
     @Override
-    public void onAddedToWorld() {
-        var offHandItem = ((LivingEntity) this.getOwner()).getItemInHand(InteractionHand.OFF_HAND);
-        if(Block.byItem(offHandItem.getItem()) != Blocks.AIR) {
-            block = Block.byItem(offHandItem.getItem());
-        }
-    }
-
-    @Override
     protected void tickDespawn() {
         if(this.inGroundTime > 40) {
-            if(block != null) {
-                this.level.setBlockAndUpdate(this.blockPosition(), block.defaultBlockState());
+            var itemInHand = ((LivingEntity) getOwner()).getOffhandItem();
+            var amount = itemInHand.getCount();
+            if(amount != 0) {
+                itemInHand.setCount(amount - 1);
             }
-            discard();
+            else {
+                discard();
+            }
         }
     }
 }
