@@ -20,4 +20,6 @@ public class ModItems {
             () -> new AirstrikeArrowItem(new Item.Properties()));
     public static final RegistryObject<Item> TRANSMUTATION_ARROW = ITEMS.register("transmutation_arrow",
             () -> new TransmutationArrowItem(new Item.Properties()));
+    public static final RegistryObject<Item> MITOSIS_ARROW = ITEMS.register("mitosis_arrow",
+            () -> new MitosisArrowItem(new Item.Properties()));
 }

@@ -46,7 +46,6 @@ public class AirstrikeArrowEntity extends AbstractArrow {
                 var newpos = pos.above(40);
                 var entity = ModEntityType.EXPLOSIVE_ARROW.get();
                 entity.spawn(level.getServer().getLevel(level.dimension()), newpos, MobSpawnType.MOB_SUMMONED);
-                ApollosArrows.LOGGER.debug("entity summoned");
             });
             discard();
         }
