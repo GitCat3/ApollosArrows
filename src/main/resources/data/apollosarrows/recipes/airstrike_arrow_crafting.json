@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "AAA",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:tnt"
+        },
+        "A": {
+            "item": "apollosarrows:explosive_arrow"
+        }
+    },
+    "result": {
+        "item": "apollosarrows:airstrike_arrow",
+        "count": 1
+    }
+}

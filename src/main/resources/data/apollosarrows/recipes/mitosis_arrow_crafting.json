@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " # ",
+        "###",
+        " # "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:arrow"
+        }
+    },
+    "result": {
+        "item": "apollosarrows:mitosis_arrow",
+        "count": 1
+    }
+}
