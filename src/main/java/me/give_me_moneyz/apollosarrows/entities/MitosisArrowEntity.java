@@ -44,7 +44,6 @@ public class MitosisArrowEntity extends AbstractArrow {
         if (this.inGroundTime > 40) {
             ServerLevel serverLevel = (ServerLevel) this.level;
             Vec3 direction = this.getDeltaMovement().normalize();
-            ApollosArrows.LOGGER.debug(direction.toString());
             for (int i = 0; i < 4; i++) {
                 double angle = Math.PI / 2 * i;
                 double sinAngle = Math.sin(angle);
@@ -52,7 +51,6 @@ public class MitosisArrowEntity extends AbstractArrow {
                 Vec3 offset = new Vec3(direction.x * cosAngle + direction.z * sinAngle, 0,
                         -direction.x * sinAngle + direction.z * cosAngle);
                 offset = offset.normalize().multiply(0.2, 0.2, 0.2).add(0, 1, 0);
-                ApollosArrows.LOGGER.debug(direction.toString());
                 Arrow arrow = new Arrow(this.level, this.getX(), this.getY(), this.getZ());
                 arrow.setDeltaMovement(offset.x, offset.y, offset.z);
                 serverLevel.addFreshEntity(arrow);
