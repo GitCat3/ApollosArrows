@@ -12,11 +12,11 @@ import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.common.loot.LootModifier;
 import java.util.function.Supplier;
 
-public class DungeonModifier extends LootModifier {
-    public static final Supplier<Codec<DungeonModifier>> CODEC = Suppliers.memoize(
-            () -> RecordCodecBuilder.create(inst -> codecStart(inst).apply(inst, DungeonModifier::new)));
+public class TransmutationArrowLootModifier extends LootModifier {
+    public static final Supplier<Codec<TransmutationArrowLootModifier>> CODEC = Suppliers.memoize(
+            () -> RecordCodecBuilder.create(inst -> codecStart(inst).apply(inst, TransmutationArrowLootModifier::new)));
 
-    public DungeonModifier(final LootItemCondition[] conditionsIn) {
+    public TransmutationArrowLootModifier(final LootItemCondition[] conditionsIn) {
         super(conditionsIn);
     }
 

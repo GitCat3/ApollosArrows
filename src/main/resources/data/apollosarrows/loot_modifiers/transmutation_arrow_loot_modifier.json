@@ -1,0 +1,20 @@
+{
+  "type": "apollosarrows:transmutation_arrow_loot_modifier",
+  "conditions": [
+    {
+      "condition": "minecraft:alternative",
+      "terms": [
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:chests/simple_dungeon"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:chests/ruined_portal"
+        }
+      ],
+      "condition": "minecraft:random_chance",
+      "chance": 0.2
+    }
+  ]
+}
