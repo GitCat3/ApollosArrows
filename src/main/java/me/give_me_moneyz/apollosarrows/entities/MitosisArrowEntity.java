@@ -1,8 +1,6 @@
 package me.give_me_moneyz.apollosarrows.entities;
 
-import me.give_me_moneyz.apollosarrows.ApollosArrows;
 import me.give_me_moneyz.apollosarrows.registry.ModItems;
-import net.minecraft.core.Direction;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.server.level.ServerLevel;

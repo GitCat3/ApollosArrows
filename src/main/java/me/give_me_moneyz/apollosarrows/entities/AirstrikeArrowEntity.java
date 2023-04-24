@@ -1,6 +1,5 @@
 package me.give_me_moneyz.apollosarrows.entities;
 
-import me.give_me_moneyz.apollosarrows.ApollosArrows;
 import me.give_me_moneyz.apollosarrows.registry.ModEntityType;
 import me.give_me_moneyz.apollosarrows.registry.ModItems;
 import net.minecraft.core.BlockPos;

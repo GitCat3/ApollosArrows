@@ -12,8 +12,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.network.NetworkHooks;
 
-import java.util.Random;
-
 public class EnderArrowEntity extends AbstractArrow {
     public EnderArrowEntity(EntityType<EnderArrowEntity> entityType, Level world) {
         super(entityType, world);
