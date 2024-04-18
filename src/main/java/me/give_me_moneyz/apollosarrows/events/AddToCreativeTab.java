@@ -17,6 +17,7 @@ public class AddToCreativeTab {
             event.accept(ModItems.AIRSTRIKE_ARROW);
             event.accept(ModItems.TRANSMUTATION_ARROW);
             event.accept(ModItems.MITOSIS_ARROW);
+            event.accept(ModItems.INCENDIARY_ARROW);
         }
     }
 }

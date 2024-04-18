@@ -40,4 +40,8 @@ public class ModEntityType {
             "split_arrow", () -> EntityType.Builder.of(
                     (EntityType.EntityFactory<MitosisArrowEntity>) MitosisArrowEntity::new,
                     MobCategory.MISC).sized(0.5F, 0.5F).build("split_arrow"));
+    public static final RegistryObject<EntityType<IncendiaryArrowEntity>> INCENDIARY_ARROW = ENTITY_TYPES.register(
+            "fire_arrow", () -> EntityType.Builder.of(
+                    (EntityType.EntityFactory<IncendiaryArrowEntity>) IncendiaryArrowEntity::new,
+                    MobCategory.MISC).sized(0.5F, 0.5F).build("fire_arrow"));
 }

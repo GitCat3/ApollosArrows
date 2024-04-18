@@ -14,6 +14,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraftforge.network.NetworkHooks;
 
+import java.util.Random;
+
 public class AirstrikeArrowEntity extends AbstractArrow {
     public AirstrikeArrowEntity(EntityType<AirstrikeArrowEntity> entityType, Level world) {
         super(entityType, world);
@@ -43,8 +45,16 @@ public class AirstrikeArrowEntity extends AbstractArrow {
             var aabb = AABB.ofSize(this.position(), 10, 1, 10);
             BlockPos.betweenClosedStream(aabb).forEach(pos -> {
                 var newpos = pos.above(40);
-                var entity = ModEntityType.EXPLOSIVE_ARROW.get();
-                entity.spawn(level.getServer().getLevel(level.dimension()), newpos, MobSpawnType.MOB_SUMMONED);
+                var explosiveentity = ModEntityType.EXPLOSIVE_ARROW.get();
+                var incendiaryentity = ModEntityType.INCENDIARY_ARROW.get();
+                var random = new Random();
+                var randomInt = random.nextInt(6);
+                if(randomInt < 5) {
+                    explosiveentity.spawn(level.getServer().getLevel(level.dimension()), newpos, MobSpawnType.MOB_SUMMONED);
+                }
+                else {
+                    incendiaryentity.spawn(level.getServer().getLevel(level.dimension()), newpos, MobSpawnType.MOB_SUMMONED);
+                }
             });
             discard();
         }

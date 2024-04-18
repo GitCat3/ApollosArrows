@@ -22,4 +22,6 @@ public class ModItems {
             () -> new TransmutationArrowItem(new Item.Properties()));
     public static final RegistryObject<Item> MITOSIS_ARROW = ITEMS.register("mitosis_arrow",
             () -> new MitosisArrowItem(new Item.Properties()));
+    public static final RegistryObject<Item> INCENDIARY_ARROW = ITEMS.register("incendiary_arrow",
+            () -> new IncendiaryArrowItem(new Item.Properties()));
 }

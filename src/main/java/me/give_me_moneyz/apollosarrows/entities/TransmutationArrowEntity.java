@@ -91,6 +91,6 @@ public class TransmutationArrowEntity extends AbstractArrow {
                 }
             }
         }
-        discard();
+        this.discard();
     }
 }

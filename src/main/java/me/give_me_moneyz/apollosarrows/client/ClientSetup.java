@@ -19,5 +19,6 @@ public class ClientSetup {
         EntityRenderers.register(ModEntityType.AIRSTRIKE_ARROW.get(), AirstrikeArrowRenderer::new);
         EntityRenderers.register(ModEntityType.TRANSMUTATION_ARROW.get(), TransmutationArrowRenderer::new);
         EntityRenderers.register(ModEntityType.MITOSIS_ARROW.get(), MitosisArrowRenderer::new);
+        EntityRenderers.register(ModEntityType.INCENDIARY_ARROW.get(), IncendiaryArrowRenderer::new);
     }
 }
