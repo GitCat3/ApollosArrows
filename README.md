@@ -1,5 +1,5 @@
 # Apollos Arrows
-This is a mod for Minecraft 1.19.3 that adds custom arrows to minecraft! The currently implemented arrows are:
+This is a mod for Minecraft Forge 1.19.3 that adds custom arrows to minecraft! The currently implemented arrows are:
 1. Airstrike Arrow
     - Rains down a mix of explosive and incendiary arrows from the sky, bringing infinite destruction to your foes
 2. Ender Arrow
