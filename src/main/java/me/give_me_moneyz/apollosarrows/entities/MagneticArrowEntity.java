@@ -52,7 +52,7 @@ public class MagneticArrowEntity extends AbstractArrow {
                 discard();
                 return;
             }
-            for (Entity entity : this.level.getEntities(this, aabb)) {
+            for (Entity entity : this.level().getEntities(this, aabb)) {
                 entity.setDeltaMovement(position().subtract(entity.getPosition(1)));
             }
         }

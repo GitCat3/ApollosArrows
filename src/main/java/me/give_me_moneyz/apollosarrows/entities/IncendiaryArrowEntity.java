@@ -49,13 +49,14 @@ public class IncendiaryArrowEntity extends AbstractArrow {
     protected void tickDespawn() {
         if (this.inGroundTime > 60) {
             var aabb = AABB.ofSize(this.getPosition(1), 10, 10, 10);
-            var aabbmin = new BlockPos(aabb.minX, aabb.minY, aabb.minZ);
-            var aabbmax = new BlockPos(aabb.maxX, aabb.maxY, aabb.maxZ);
+            var aabbmin = new BlockPos((int) aabb.minX, (int) aabb.minY, (int) aabb.minZ);
+            var aabbmax = new BlockPos((int) aabb.maxX, (int) aabb.maxY, (int) aabb.maxZ);
             for(BlockPos blockPos: BlockPos.betweenClosed(aabbmin, aabbmax)) {
-                if(this.level.getBlockState(blockPos).isAir()) {
-                    this.level.setBlockAndUpdate(blockPos, Blocks.FIRE.defaultBlockState());
+                if(this.level().getBlockState(blockPos).isAir()) {
+                    this.level().setBlockAndUpdate(blockPos, Blocks.FIRE.defaultBlockState());
                 }
             }
+            this.discard();
 
         }
     }

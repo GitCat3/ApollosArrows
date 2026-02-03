@@ -73,8 +73,8 @@ public class TransmutationArrowEntity extends AbstractArrow {
             var changed = false;
 
             // Check if the block meets the conditions you are searching for and perform any necessary actions
-            if (level.getBlockState(current).getBlock() != Blocks.AIR && level.getBlockState(current).getBlock() != block) {
-                level.setBlockAndUpdate(current, block.defaultBlockState());
+            if (level().getBlockState(current).getBlock() != Blocks.AIR && level().getBlockState(current).getBlock() != block) {
+                level().setBlockAndUpdate(current, block.defaultBlockState());
                 itemStack.shrink(1);
                 changed = true;
             }

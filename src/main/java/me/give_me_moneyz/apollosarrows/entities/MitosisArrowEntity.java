@@ -40,7 +40,7 @@ public class MitosisArrowEntity extends AbstractArrow {
     protected void tickDespawn() {
         super.tickDespawn();
         if (this.inGroundTime > 40) {
-            ServerLevel serverLevel = (ServerLevel) this.level;
+            ServerLevel serverLevel = (ServerLevel) this.level();
             Vec3 direction = this.getDeltaMovement().normalize();
             Vec3 oppositeYDirection = new Vec3(direction.x, -direction.y, direction.z);
             oppositeYDirection = new Vec3(-oppositeYDirection.x, oppositeYDirection.y, -oppositeYDirection.z);
@@ -51,7 +51,7 @@ public class MitosisArrowEntity extends AbstractArrow {
                 Vec3 offset = new Vec3(oppositeYDirection.x * cosAngle + oppositeYDirection.z * sinAngle, 0,
                         -oppositeYDirection.x * sinAngle + oppositeYDirection.z * cosAngle);
                 offset = offset.normalize().multiply(0.2, 0.2, 0.2).add(0, -getDeltaMovement().normalize().y, 0);
-                Arrow arrow = new Arrow(this.level, this.getX(), this.getY(), this.getZ());
+                Arrow arrow = new Arrow(this.level(), this.getX(), this.getY(), this.getZ());
                 arrow.setDeltaMovement(offset.x, offset.y, offset.z);
                 serverLevel.addFreshEntity(arrow);
             }

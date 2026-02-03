@@ -50,10 +50,10 @@ public class AirstrikeArrowEntity extends AbstractArrow {
                 var random = new Random();
                 var randomInt = random.nextInt(6);
                 if(randomInt < 5) {
-                    explosiveentity.spawn(level.getServer().getLevel(level.dimension()), newpos, MobSpawnType.MOB_SUMMONED);
+                    explosiveentity.spawn(level().getServer().getLevel(level().dimension()), newpos, MobSpawnType.MOB_SUMMONED);
                 }
                 else {
-                    incendiaryentity.spawn(level.getServer().getLevel(level.dimension()), newpos, MobSpawnType.MOB_SUMMONED);
+                    incendiaryentity.spawn(level().getServer().getLevel(level().dimension()), newpos, MobSpawnType.MOB_SUMMONED);
                 }
             });
             discard();

@@ -41,7 +41,7 @@ public class EnderArrowEntity extends AbstractArrow {
         if (owner != null) {
             var location = pResult.getLocation();
             owner.teleportTo(location.x, location.y, location.z);
-            getServer().getLevel(level.dimension()).sendParticles(ParticleTypes.PORTAL, location.x, location.y,
+            getServer().getLevel(level().dimension()).sendParticles(ParticleTypes.PORTAL, location.x, location.y,
                     location.z, 90, 0, 0, 0, 0.2);
             discard();
         }
