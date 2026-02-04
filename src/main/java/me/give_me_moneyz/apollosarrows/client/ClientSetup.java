@@ -2,7 +2,10 @@ package me.give_me_moneyz.apollosarrows.client;
 
 import me.give_me_moneyz.apollosarrows.ApollosArrows;
 import me.give_me_moneyz.apollosarrows.client.render.*;
+import me.give_me_moneyz.apollosarrows.inventory.FletchingTableScreen;
 import me.give_me_moneyz.apollosarrows.registry.ModEntityType;
+import me.give_me_moneyz.apollosarrows.registry.ModMenuTypes;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -20,5 +23,9 @@ public class ClientSetup {
         EntityRenderers.register(ModEntityType.TRANSMUTATION_ARROW.get(), TransmutationArrowRenderer::new);
         EntityRenderers.register(ModEntityType.MITOSIS_ARROW.get(), MitosisArrowRenderer::new);
         EntityRenderers.register(ModEntityType.INCENDIARY_ARROW.get(), IncendiaryArrowRenderer::new);
+
+        event.enqueueWork(() -> {
+            MenuScreens.register(ModMenuTypes.FLETCHING_TABLE.get(), FletchingTableScreen::new);
+        });
     }
 }
