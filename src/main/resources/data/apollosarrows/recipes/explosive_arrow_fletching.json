@@ -1,0 +1,27 @@
+{
+  "type": "apollosarrows:fletching",
+  "ingredients": [
+    {
+      "ingredient": {
+        "item": "minecraft:feather"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "item": "minecraft:stick"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "item": "minecraft:tnt"
+      },
+      "count": 16
+    }
+  ],
+  "result": {
+    "item": "apollosarrows:explosive_arrow",
+    "count": 1
+  }
+}

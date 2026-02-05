@@ -1,5 +1,7 @@
 package me.give_me_moneyz.apollosarrows.inventory;
 
+import me.give_me_moneyz.apollosarrows.recipe.FletchingRecipe;
+import me.give_me_moneyz.apollosarrows.recipe.ModRecipes;
 import me.give_me_moneyz.apollosarrows.registry.ModMenuTypes;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
@@ -10,7 +12,10 @@ import net.minecraft.world.inventory.ResultContainer;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
+
+import java.util.Optional;
 
 public class FletchingTableMenu extends AbstractContainerMenu {
     private final SimpleContainer inputSlots = new SimpleContainer(3) {
@@ -22,6 +27,7 @@ public class FletchingTableMenu extends AbstractContainerMenu {
     };
     private final ResultContainer resultSlot = new ResultContainer();
     private final ContainerLevelAccess access;
+    private final Player player;
 
     public FletchingTableMenu(int containerId, Inventory playerInventory, FriendlyByteBuf extraData) {
         this(containerId, playerInventory, ContainerLevelAccess.NULL);
@@ -30,6 +36,7 @@ public class FletchingTableMenu extends AbstractContainerMenu {
     public FletchingTableMenu(int containerId, Inventory playerInventory, ContainerLevelAccess access) {
         super(ModMenuTypes.FLETCHING_TABLE.get(), containerId);
         this.access = access;
+        this.player = playerInventory.player;
 
         this.addSlot(new Slot(inputSlots, 0, 26, 47));
         this.addSlot(new Slot(inputSlots, 1, 51, 47));
@@ -59,9 +66,17 @@ public class FletchingTableMenu extends AbstractContainerMenu {
 
     protected void onTake(Player player, ItemStack stack) {
         stack.onCraftedBy(player.level(), player, stack.getCount());
-        this.inputSlots.removeItem(0, 1);
-        this.inputSlots.removeItem(1, 1);
-        this.inputSlots.removeItem(2, 1);
+        Optional<FletchingRecipe> recipe = player.level().getRecipeManager().getRecipeFor(ModRecipes.FLETCHING_TYPE.get(), inputSlots, player.level());
+
+        if (recipe.isPresent()) {
+            for (int i = 0; i < 3; i++) {
+                inputSlots.removeItem(i, recipe.get().getIngredientsWithCounts().get(i).getCount());
+            }
+        } else {
+            this.inputSlots.removeItem(0, 1);
+            this.inputSlots.removeItem(1, 1);
+            this.inputSlots.removeItem(2, 1);
+        }
     }
 
     @Override
@@ -73,7 +88,14 @@ public class FletchingTableMenu extends AbstractContainerMenu {
     }
 
     private void createResult() {
-        // Logic for creating result goes here
+        if (!player.level().isClientSide) {
+            Optional<FletchingRecipe> recipe = player.level().getRecipeManager().getRecipeFor(ModRecipes.FLETCHING_TYPE.get(), inputSlots, player.level());
+            if (recipe.isPresent()) {
+                this.resultSlot.setItem(0, recipe.get().assemble(inputSlots, player.level().registryAccess()));
+            } else {
+                this.resultSlot.setItem(0, ItemStack.EMPTY);
+            }
+        }
     }
 
     @Override

@@ -6,6 +6,7 @@ import me.give_me_moneyz.apollosarrows.registry.GlobalLootModifiers;
 import me.give_me_moneyz.apollosarrows.registry.ModMenuTypes;
 import me.give_me_moneyz.apollosarrows.registry.ModEntityType;
 import me.give_me_moneyz.apollosarrows.registry.ModItems;
+import me.give_me_moneyz.apollosarrows.recipe.ModRecipes;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -29,6 +30,8 @@ public class ApollosArrows {
         ModEntityType.ENTITY_TYPES.register(modEventBus);
         GlobalLootModifiers.GLM.register(modEventBus);
         ModMenuTypes.MENUS.register(modEventBus);
+        ModRecipes.SERIALIZERS.register(modEventBus);
+        ModRecipes.TYPES.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
