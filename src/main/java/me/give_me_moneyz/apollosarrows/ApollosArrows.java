@@ -2,7 +2,6 @@ package me.give_me_moneyz.apollosarrows;
 
 import com.mojang.logging.LogUtils;
 import me.give_me_moneyz.apollosarrows.registry.CreativeTabRegistry;
-import me.give_me_moneyz.apollosarrows.registry.GlobalLootModifiers;
 import me.give_me_moneyz.apollosarrows.registry.ModMenuTypes;
 import me.give_me_moneyz.apollosarrows.registry.ModEntityType;
 import me.give_me_moneyz.apollosarrows.registry.ModItems;
@@ -28,7 +27,6 @@ public class ApollosArrows {
         ModItems.ITEMS.register(modEventBus);
         CreativeTabRegistry.register(modEventBus);
         ModEntityType.ENTITY_TYPES.register(modEventBus);
-        GlobalLootModifiers.GLM.register(modEventBus);
         ModMenuTypes.MENUS.register(modEventBus);
         ModRecipes.SERIALIZERS.register(modEventBus);
         ModRecipes.TYPES.register(modEventBus);

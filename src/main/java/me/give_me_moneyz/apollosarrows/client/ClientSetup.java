@@ -18,12 +18,6 @@ public class ClientSetup {
     @SubscribeEvent
     public static void doSetup(FMLClientSetupEvent event) {
         EntityRenderers.register(ModEntityType.EXPLOSIVE_ARROW.get(), ctx -> new ModArrowRenderer<>(ctx, ResourceLocation.fromNamespaceAndPath(ApollosArrows.MODID, "textures/entity/explosive_arrow.png")));
-        EntityRenderers.register(ModEntityType.MAGNETIC_ARROW.get(), ctx -> new ModArrowRenderer<>(ctx, ResourceLocation.fromNamespaceAndPath(ApollosArrows.MODID, "textures/entity/magnetic_arrow.png")));
-        EntityRenderers.register(ModEntityType.ENDER_ARROW.get(), ctx -> new ModArrowRenderer<>(ctx, ResourceLocation.fromNamespaceAndPath(ApollosArrows.MODID, "textures/entity/ender_arrow.png")));
-        EntityRenderers.register(ModEntityType.AIRSTRIKE_ARROW.get(), ctx -> new ModArrowRenderer<>(ctx, ResourceLocation.fromNamespaceAndPath(ApollosArrows.MODID, "textures/entity/airstrike_arrow.png")));
-        EntityRenderers.register(ModEntityType.TRANSMUTATION_ARROW.get(), ctx -> new ModArrowRenderer<>(ctx, ResourceLocation.fromNamespaceAndPath(ApollosArrows.MODID, "textures/entity/transmutation_arrow.png")));
-        EntityRenderers.register(ModEntityType.MITOSIS_ARROW.get(), ctx -> new ModArrowRenderer<>(ctx, ResourceLocation.fromNamespaceAndPath(ApollosArrows.MODID, "textures/entity/mitosis_arrow.png")));
-        EntityRenderers.register(ModEntityType.INCENDIARY_ARROW.get(), ctx -> new ModArrowRenderer<>(ctx, ResourceLocation.fromNamespaceAndPath(ApollosArrows.MODID, "textures/entity/incendiary_arrow.png")));
 
         event.enqueueWork(() -> MenuScreens.register(ModMenuTypes.FLETCHING_TABLE.get(), FletchingTableScreen::new));
     }

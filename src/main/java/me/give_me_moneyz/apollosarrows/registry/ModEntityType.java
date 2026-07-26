@@ -17,31 +17,4 @@ public class ModEntityType {
             () -> EntityType.Builder.of((EntityType.EntityFactory<ExplosiveArrowEntity>) ExplosiveArrowEntity::new,
                             MobCategory.MISC)
                     .sized(0.5F, 0.5F).build("torch_arrow"));
-    public static final RegistryObject<EntityType<MagneticArrowEntity>> MAGNETIC_ARROW = ENTITY_TYPES.register(
-            "magnet_arrow",
-            () -> EntityType.Builder.of((EntityType.EntityFactory<MagneticArrowEntity>) MagneticArrowEntity::new,
-                            MobCategory.MISC)
-                    .sized(0.5F, 0.5F).build("magnet_arrow"));
-    public static final RegistryObject<EntityType<EnderArrowEntity>> ENDER_ARROW = ENTITY_TYPES.register(
-            "teleport_arrow",
-            () -> EntityType.Builder.of((EntityType.EntityFactory<EnderArrowEntity>) EnderArrowEntity::new,
-                            MobCategory.MISC)
-                    .sized(0.5F, 0.5F).build("teleport_arrow"));
-    public static final RegistryObject<EntityType<AirstrikeArrowEntity>> AIRSTRIKE_ARROW = ENTITY_TYPES.register(
-            "strike_arrow",
-            () -> EntityType.Builder.of((EntityType.EntityFactory<AirstrikeArrowEntity>) AirstrikeArrowEntity::new,
-                            MobCategory.MISC)
-                    .sized(0.5F, 0.5F).build("strike_arrow"));
-    public static final RegistryObject<EntityType<TransmutationArrowEntity>> TRANSMUTATION_ARROW = ENTITY_TYPES.register(
-            "change_arrow", () -> EntityType.Builder.of(
-                    (EntityType.EntityFactory<TransmutationArrowEntity>) TransmutationArrowEntity::new,
-                    MobCategory.MISC).sized(0.5F, 0.5F).build("change_arrow"));
-    public static final RegistryObject<EntityType<MitosisArrowEntity>> MITOSIS_ARROW = ENTITY_TYPES.register(
-            "split_arrow", () -> EntityType.Builder.of(
-                    (EntityType.EntityFactory<MitosisArrowEntity>) MitosisArrowEntity::new,
-                    MobCategory.MISC).sized(0.5F, 0.5F).build("split_arrow"));
-    public static final RegistryObject<EntityType<IncendiaryArrowEntity>> INCENDIARY_ARROW = ENTITY_TYPES.register(
-            "fire_arrow", () -> EntityType.Builder.of(
-                    (EntityType.EntityFactory<IncendiaryArrowEntity>) IncendiaryArrowEntity::new,
-                    MobCategory.MISC).sized(0.5F, 0.5F).build("fire_arrow"));
 }
